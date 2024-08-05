@@ -1,3 +1,31 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "plugins": ["prettier", "@typescript-eslint"],
+  "extends": [
+    "prettier",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020, // or higher
+    "sourceType": "module", // enable ES6 import/export syntax
+    "project": "./tsconfig.json" // path to your tsconfig.json file
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "react/react-in-jsx-scope": "off"
+  },
+  "env": {
+    "es6": true, // enable ES6 features
+    "browser": true, // enable browser environment
+    "node": true // enable Node.js environment
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // detect React version automatically
+    }
+  }
 }
