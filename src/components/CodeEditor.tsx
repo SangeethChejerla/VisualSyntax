@@ -20,7 +20,6 @@ import { getExtension, initialCode } from '@/lib/getExtension';
 interface CodeEditorProps {
   language: string;
   theme: string;
-  icon: string;
   background?: string;
   currentPadding?: string;
   title: string; // Use title for displaying the filename
@@ -32,7 +31,6 @@ function CodeEditor({
   theme,
   background,
   currentPadding,
-  icon,
   title,
   onTitleChange,
 }: CodeEditorProps) {
@@ -94,10 +92,6 @@ function CodeEditor({
           }}
         />
         <span style={{ color: 'rgba(255, 255, 255, 0.6)' }}>{extension}</span>
-      </div>
-
-      <div className="icon flex justify-center items-center p-1 bg-black bg-opacity-30 rounded-sm">
-        <img src={icon} className="absolute right-0 w-[33px] mr-2" alt="" />
       </div>
 
       <AceEditor

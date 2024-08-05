@@ -80,9 +80,9 @@ export function Customize({ onChange }: { onChange: (settings: any) => void }) {
                   <SelectValue placeholder="Select theme" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="theme1">monokai</SelectItem>
-                  <SelectItem value="theme2">twilight</SelectItem>
-                  <SelectItem value="theme3">terminal</SelectItem>
+                  <SelectItem value="monokai">monokai</SelectItem>
+                  <SelectItem value="twilight">twilight</SelectItem>
+                  <SelectItem value="terminal">terminal</SelectItem>
                 </SelectContent>
               </Select>
             </div>

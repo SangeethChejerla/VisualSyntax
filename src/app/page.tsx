@@ -41,7 +41,6 @@ export default function Home() {
         <CodeEditor
           language={editorSettings.language}
           theme={editorSettings.theme}
-          icon={`path_to_icons/${editorSettings.language}.png`} // Adjust this path
           background={editorSettings.color}
           currentPadding={`${editorSettings.padding}px`}
           title={filename} // Pass filename as title
