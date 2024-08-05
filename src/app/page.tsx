@@ -14,7 +14,8 @@ export default function Home() {
     language: 'JavaScript',
   });
 
-  const codeEditorRef = useRef(null);
+  const [filename, setFilename] = useState('App');
+  const codeEditorRef = useRef<HTMLDivElement>(null);
 
   const handleExport = async () => {
     if (!codeEditorRef.current) return;
@@ -24,7 +25,7 @@ export default function Home() {
 
     const link = document.createElement('a');
     link.href = dataURL;
-    link.download = 'code.png';
+    link.download = `${filename || 'code'}.png`; // Use the filename state
     link.click();
   };
 
@@ -33,7 +34,7 @@ export default function Home() {
       <div className="flex justify-center">
         <Customize onChange={(settings) => setEditorSettings(settings)} />
         <Button onClick={handleExport} className="flex gap-2 items-center">
-          <Download className="" size={16} /> Export as Image
+          <Download size={16} /> Export as Image
         </Button>
       </div>
       <div ref={codeEditorRef}>
@@ -43,6 +44,8 @@ export default function Home() {
           icon={`path_to_icons/${editorSettings.language}.png`} // Adjust this path
           background={editorSettings.color}
           currentPadding={`${editorSettings.padding}px`}
+          title={filename} // Pass filename as title
+          onTitleChange={setFilename} // Update filename in the parent component
         />
       </div>
     </div>
